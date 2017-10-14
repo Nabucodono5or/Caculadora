@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fundo"
     android:layout_centerHorizontal="true"
     android:orientation="vertical"
     android:paddingLeft="16dp"
@@ -17,7 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="117dp"
         android:orientation="horizontal"
-        android:layout_marginBottom="15dp">
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/customlayout">
 
         <TextView
             android:id="@+id/textViewResultado"
@@ -25,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="TextView"
+            android:layout_marginRight="5dp"
             android:textAlignment="textEnd"
             android:textSize="50sp"
             android:textStyle="bold" />
@@ -40,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="x²" />
 
         <Button
@@ -47,12 +52,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="C" />
 
         <Button
             android:id="@+id/buttonRaiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/bordasbotoes"
             android:layout_weight="1" />
 
         <Button
@@ -60,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="/" />
     </LinearLayout>
 
@@ -73,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="7" />
 
         <Button
@@ -80,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="8" />
 
         <Button
@@ -87,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="9" />
 
         <Button
@@ -94,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="X" />
     </LinearLayout>
 
@@ -107,6 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="4" />
 
         <Button
@@ -114,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="5" />
 
         <Button
@@ -121,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="6" />
 
         <Button
@@ -128,6 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="-" />
     </LinearLayout>
 
@@ -141,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="1" />
 
         <Button
@@ -148,6 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="2" />
 
         <Button
@@ -155,6 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="3" />
 
         <Button
@@ -162,6 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="+" />
     </LinearLayout>
 
@@ -175,6 +195,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="0" />
 
         <Button
@@ -182,6 +203,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/bordasbotoes"
             android:text="%" />
 
         <Button
@@ -189,6 +211,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/corbotton"
+            android:textColor="@color/letraContrast"
             android:text="=" />
     </LinearLayout>
 
