@@ -13,15 +13,23 @@
     tools:context="com.example.daenerys.caculadora.Calculadora"
     tools:showIn="@layout/app_bar_calculadora">
 
-    <TextView
-        android:id="@+id/textView5"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="117dp"
-        android:textSize="40sp"
-        android:layout_marginBottom="15dp"
-        android:textAlignment="textEnd"
-        android:text="TextView" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
 
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="TextView"
+            android:textAlignment="textEnd"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
