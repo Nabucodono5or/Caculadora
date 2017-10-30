@@ -145,6 +145,21 @@ public class Calculadora extends AppCompatActivity
         tela.setText(resposta);
     }//dividir
 
+    public void porcetagem(){
+
+    }//porcetagem
+
+    public void raiz(){
+
+    }//raiz
+
+    public void potenciaDois(View v){
+        acumulado = (int) Math.pow(Double.parseDouble(resposta), 2);
+        resposta = String.valueOf(acumulado);
+        tela.setText(resposta);
+        operando = "";
+    }
+
     public void igual(View v){
         calcula();
         resposta = String.valueOf(acumulado);
@@ -175,7 +190,6 @@ public class Calculadora extends AppCompatActivity
         acumulado = 0;
         tela.setText(resposta);
     } //limpar
-
 
 
  //Parte responsável para o uso do Drawermenu//------------------------

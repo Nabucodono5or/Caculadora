@@ -45,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/bordasbotoes"
-            android:text="x²" />
+            android:text="x²"
+            android:onClick="potenciaDois"/>
 
         <Button
             android:id="@+id/buttonLimpar"
