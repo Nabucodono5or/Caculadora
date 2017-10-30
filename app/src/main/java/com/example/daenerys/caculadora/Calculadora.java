@@ -126,8 +126,10 @@ public class Calculadora extends AppCompatActivity
     }//dividir
 
     public void igual(View v){
+        calcula();
         resposta = String.valueOf(acumulado);
         tela.setText(resposta);
+        operando = "";
     }//igual
 
 
@@ -139,7 +141,7 @@ public class Calculadora extends AppCompatActivity
         }else{
             acumulado = Integer.parseInt(resposta);
         }
-        operando = "";
+
     }//calcula
 
  //Parte responsável para o uso do Drawermenu//------------------------
