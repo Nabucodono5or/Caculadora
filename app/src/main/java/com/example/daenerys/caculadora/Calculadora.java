@@ -155,9 +155,8 @@ public class Calculadora extends AppCompatActivity
 
     public void calcula(){
         if(operando.equals("+")){ //usar um case para operandos retratar o igual para cada operando
-            acumulado += Integer.parseInt(resposta); //ifeal tirar essa funcionalidade para um método
+            acumulado += Integer.parseInt(resposta); //ideal tirar essa funcionalidade para um método
             //que recebe um operando
-
         }else if (operando.equals("-")){
             acumulado -= Integer.parseInt(resposta);
         }else if(operando.equals("*")){
@@ -169,6 +168,15 @@ public class Calculadora extends AppCompatActivity
         }
 
     }//calcula
+
+    public void limpar(View v){
+        resposta = "";
+        operando = "";
+        acumulado = 0;
+        tela.setText(resposta);
+    } //limpar
+
+
 
  //Parte responsável para o uso do Drawermenu//------------------------
     @Override
