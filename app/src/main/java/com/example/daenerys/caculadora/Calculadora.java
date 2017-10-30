@@ -145,11 +145,11 @@ public class Calculadora extends AppCompatActivity
         tela.setText(resposta);
     }//dividir
 
-    public void porcetagem(){
+    public void porcetagem(View v){
 
     }//porcetagem
 
-    public void raiz(){
+    public void raiz(View v){
 
     }//raiz
 
