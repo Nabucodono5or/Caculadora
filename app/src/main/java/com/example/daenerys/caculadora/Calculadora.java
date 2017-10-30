@@ -33,6 +33,8 @@ public class Calculadora extends AppCompatActivity
         tela = (TextView) findViewById(R.id.textViewResultado);
         acumulado = 0;
 
+        tela.setText("0");
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -163,7 +165,7 @@ public class Calculadora extends AppCompatActivity
         }else if (operando.equals("/")){
             if (Integer.parseInt(resposta) > 0) acumulado = acumulado / Integer.parseInt(resposta);
         }else{
-            acumulado = Integer.parseInt(resposta);
+            if(!resposta.equals("")) acumulado = Integer.parseInt(resposta);
         }
 
     }//calcula
