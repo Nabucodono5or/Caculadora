@@ -111,8 +111,14 @@ public class Calculadora extends AppCompatActivity
     }//somar
 
     public void subtrair(View v){
-        tela.setText("");
+        calcula();
+
+        if(!resposta.equals("")){
+            operando = "-";
+        }//if
+
         resposta = "";
+        tela.setText(resposta);
     }//subtrair
 
     public void multiplicar(View v){
@@ -138,6 +144,8 @@ public class Calculadora extends AppCompatActivity
             acumulado += Integer.parseInt(resposta); //ifeal tirar essa funcionalidade para um método
             //que recebe um operando
 
+        }else if (operando.equals("-")){
+            acumulado -= Integer.parseInt(resposta);
         }else{
             acumulado = Integer.parseInt(resposta);
         }
