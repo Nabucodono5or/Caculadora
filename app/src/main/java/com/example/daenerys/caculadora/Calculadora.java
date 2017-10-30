@@ -122,13 +122,25 @@ public class Calculadora extends AppCompatActivity
     }//subtrair
 
     public void multiplicar(View v){
-        tela.setText("");
+        calcula();
+
+        if(!resposta.equals("")){
+            operando = "*";
+        }//if
+
         resposta = "";
+        tela.setText(resposta);
     }//multiplicar
 
     public void dividir(View v){
-        tela.setText("");
+        calcula();
+
+        if(!resposta.equals("")){
+            operando = "/";
+        }//if
+
         resposta = "";
+        tela.setText(resposta);
     }//dividir
 
     public void igual(View v){
@@ -146,6 +158,10 @@ public class Calculadora extends AppCompatActivity
 
         }else if (operando.equals("-")){
             acumulado -= Integer.parseInt(resposta);
+        }else if(operando.equals("*")){
+            acumulado *= Integer.parseInt(resposta);
+        }else if (operando.equals("/")){
+            if (Integer.parseInt(resposta) > 0) acumulado = acumulado / Integer.parseInt(resposta);
         }else{
             acumulado = Integer.parseInt(resposta);
         }
