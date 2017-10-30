@@ -20,7 +20,7 @@ public class Calculadora extends AppCompatActivity
 
         String resposta = "";
         TextView tela;
-        Integer resultado;
+        Integer acumulado;
         String operando = "";
 
     @Override
@@ -31,7 +31,7 @@ public class Calculadora extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         tela = (TextView) findViewById(R.id.textViewResultado);
-        resultado = 0;
+        acumulado = 0;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -100,10 +100,14 @@ public class Calculadora extends AppCompatActivity
     //Operações//-------------------------------------------------------
 
     public void somar(View v){
-        tela.setText("");
-        operando = "+";
-        resultado = Integer.parseInt(resposta);
+        calcula();
+        //se você digitou algo na tela, resposta não será nula
+        if(!resposta.equals("")){
+            operando = "+";
+        }
+
         resposta = "";
+        tela.setText(resposta);
     }//somar
 
     public void subtrair(View v){
@@ -122,15 +126,21 @@ public class Calculadora extends AppCompatActivity
     }//dividir
 
     public void igual(View v){
-        if(operando.equals("+")){ //usar um case para operandos retratar o igual para cada operando
-            resposta = tela.getText().toString();
-            resultado += Integer.parseInt(resposta); //ifeal tirar essa funcionalidade para um método
-                                                    //que recebe um operando
-        }
-
-        tela.setText(String.valueOf(resultado.toString()));
+        resposta = String.valueOf(acumulado);
+        tela.setText(resposta);
     }//igual
 
+
+    public void calcula(){
+        if(operando.equals("+")){ //usar um case para operandos retratar o igual para cada operando
+            acumulado += Integer.parseInt(resposta); //ifeal tirar essa funcionalidade para um método
+            //que recebe um operando
+
+        }else{
+            acumulado = Integer.parseInt(resposta);
+        }
+        operando = "";
+    }//calcula
 
  //Parte responsável para o uso do Drawermenu//------------------------
     @Override
