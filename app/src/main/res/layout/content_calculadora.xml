@@ -63,7 +63,8 @@
             android:layout_height="wrap_content"
             android:background="@color/bordasbotoes"
             android:layout_weight="1"
-            android:text="@string/square_root_symbol"/>
+            android:text="@string/square_root_symbol"
+            android:onClick="raiz"/>
 
         <Button
             android:id="@+id/buttonDividir"
@@ -221,7 +222,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/bordasbotoes"
-            android:text="%" />
+            android:text="%"
+            android:onClick="porcetagem"/>
 
         <Button
             android:id="@+id/buttonIgual"

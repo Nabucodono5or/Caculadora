@@ -146,11 +146,21 @@ public class Calculadora extends AppCompatActivity
     }//dividir
 
     public void porcetagem(View v){
+        calcula();
 
+        if(!resposta.equals("")){
+            operando = "%";
+        }//if
+
+        resposta = "";
+        tela.setText(resposta);
     }//porcetagem
 
     public void raiz(View v){
-
+        acumulado = (int) Math.sqrt(Double.parseDouble(resposta));
+        resposta = String.valueOf(acumulado);
+        tela.setText(resposta);
+        operando = "";
     }//raiz
 
     public void potenciaDois(View v){
@@ -178,6 +188,9 @@ public class Calculadora extends AppCompatActivity
             acumulado *= Integer.parseInt(resposta);
         }else if (operando.equals("/")){
             if (Integer.parseInt(resposta) > 0) acumulado = acumulado / Integer.parseInt(resposta);
+        }else if (operando.equals("%")){
+            int v = Integer.parseInt(resposta);
+            acumulado = (acumulado * v)/100;
         }else{
             if(!resposta.equals("")) acumulado = Integer.parseInt(resposta);
         }
@@ -190,6 +203,7 @@ public class Calculadora extends AppCompatActivity
         acumulado = 0;
         tela.setText(resposta);
     } //limpar
+
 
 
  //Parte responsável para o uso do Drawermenu//------------------------
