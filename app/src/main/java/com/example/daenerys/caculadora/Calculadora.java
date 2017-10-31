@@ -118,8 +118,10 @@ public class Calculadora extends AppCompatActivity
     //Operações//-------------------------------------------------------
 
     public void somar(View v){
-        historico +=" + ";
-        calcula();
+        if(!resposta.equals("")) {
+            setHistorico(" + ");
+            calcula();
+        }
         //se você digitou algo na tela, resposta não será nula
         if(!resposta.equals("")){
             operando = "+";
@@ -130,8 +132,10 @@ public class Calculadora extends AppCompatActivity
     }//somar
 
     public void subtrair(View v){
-        historico +=" - ";
-        calcula();
+        if(!resposta.equals("")) {
+            setHistorico(" - ");
+            calcula();
+        }//if
 
         if(!resposta.equals("")){
             operando = "-";
@@ -142,7 +146,10 @@ public class Calculadora extends AppCompatActivity
     }//subtrair
 
     public void multiplicar(View v){
-        calcula();
+        if(!resposta.equals("")) {
+            setHistorico(" X ");
+            calcula();
+        }//if
 
         if(!resposta.equals("")){
             operando = "*";
@@ -153,7 +160,10 @@ public class Calculadora extends AppCompatActivity
     }//multiplicar
 
     public void dividir(View v){
-        calcula();
+        if(!resposta.equals("")) {
+            setHistorico(" / ");
+            calcula();
+        }//if
 
         if(!resposta.equals("")){
             operando = "/";
@@ -164,7 +174,10 @@ public class Calculadora extends AppCompatActivity
     }//dividir
 
     public void porcetagem(View v){
-        calcula();
+        if(!resposta.equals("")) {
+            setHistorico(" % ");
+            calcula();
+        }//if
 
         if(!resposta.equals("")){
             operando = "%";
@@ -174,28 +187,61 @@ public class Calculadora extends AppCompatActivity
         tela.setText(resposta);
     }//porcetagem
 
+
+    //valores unarios =================
     public void raiz(View v){
-        acumulado = (int) Math.sqrt(Double.parseDouble(resposta));
-        resposta = String.valueOf(acumulado);
-        tela.setText(resposta);
-        operando = "";
+        if(!resposta.equals("")) {
+            int b = (int) Math.sqrt(Double.parseDouble(resposta));
+            String antigaResp = resposta;
+
+            resposta = Integer.toString(b);
+
+            calcula();
+
+            historico += "( √¯" + antigaResp + " = " + String.valueOf(b) + ")" + " = " + acumulado;
+            listaHistorico.add(historico);
+
+            resposta = String.valueOf(acumulado);
+            tela.setText(resposta);
+            operando = "";
+            historico = resposta;
+        }//if
     }//raiz
 
+    //valores unarios =================
     public void potenciaDois(View v){
-        acumulado = (int) Math.pow(Double.parseDouble(resposta), 2);
-        resposta = String.valueOf(acumulado);
-        tela.setText(resposta);
-        operando = "";
+        if(!resposta.equals("")) {
+            int b = (int) Math.pow(Double.parseDouble(resposta), 2);
+            String antigaResp = resposta;
+
+            resposta = Integer.toString(b);
+
+            calcula();
+
+            historico += " ( " + antigaResp + "² = " + String.valueOf(b)+" ) "+ " = " + acumulado;
+            listaHistorico.add(historico);
+
+            resposta = String.valueOf(acumulado);
+            tela.setText(resposta);
+            operando = "";
+            historico = resposta;
+        }//if
     }
 
     public void igual(View v){
-        calcula();
+        if(!resposta.equals("")) calcula();
+
         resposta = String.valueOf(acumulado);
+
         historico += " = " + resposta;//detalhe a prestar atenção
+        listaHistorico.add(historico);
+
         tela.setText(resposta);
         operando = "";
+
         Toast.makeText(this, historico,Toast.LENGTH_SHORT).show();
         historico = resposta;
+
     }//igual
 
 
@@ -225,6 +271,10 @@ public class Calculadora extends AppCompatActivity
         tela.setText(resposta);
     } //limpar
 
+
+    public void setHistorico(String n){
+        if(!historico.equals("*[+-*/%]")) historico += n;
+    }//setHistorico
 
 
  //Parte responsável para o uso do Drawermenu//------------------------
