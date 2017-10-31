@@ -14,6 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Calculadora extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +25,9 @@ public class Calculadora extends AppCompatActivity
         TextView tela;
         Integer acumulado;
         String operando = "";
+        String historico = "";
+        ArrayList<String> listaHistorico = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,51 +56,61 @@ public class Calculadora extends AppCompatActivity
 
     public void um(View v){
         resposta +="1";
+        historico +="1";
         tela.setText(resposta);
     }//um
 
     public void dois(View v){
         resposta +="2";
+        historico +="2";
         tela.setText(resposta);
     }//dois
 
     public void tres(View v){
         resposta +="3";
+        historico +="3";
         tela.setText(resposta);
     }//tres
 
     public void quatro(View v){
         resposta +="4";
+        historico +="4";
         tela.setText(resposta);
     }//quatro
 
     public void cinco(View v){
         resposta +="5";
+        historico +="5";
         tela.setText(resposta);
     }//cinco
 
     public void seis(View v){
         resposta +="6";
+        historico +="6";
         tela.setText(resposta);
     }//seis
 
     public void sete(View v){
         resposta +="7";
+        historico +="7";
         tela.setText(resposta);
     }//sete
 
     public void oito(View v){
         resposta +="8";
+        historico +="8";
         tela.setText(resposta);
     }//oito
 
     public void nove(View v){
         resposta +="9";
+        historico +="9";
         tela.setText(resposta);
     }//nove
 
     public void zero(View v){
         resposta +="0";
+        historico +="0";
         tela.setText(resposta);
     }//nove
 
@@ -102,6 +118,7 @@ public class Calculadora extends AppCompatActivity
     //Operações//-------------------------------------------------------
 
     public void somar(View v){
+        historico +=" + ";
         calcula();
         //se você digitou algo na tela, resposta não será nula
         if(!resposta.equals("")){
@@ -113,6 +130,7 @@ public class Calculadora extends AppCompatActivity
     }//somar
 
     public void subtrair(View v){
+        historico +=" - ";
         calcula();
 
         if(!resposta.equals("")){
@@ -173,15 +191,17 @@ public class Calculadora extends AppCompatActivity
     public void igual(View v){
         calcula();
         resposta = String.valueOf(acumulado);
+        historico += " = " + resposta;//detalhe a prestar atenção
         tela.setText(resposta);
         operando = "";
+        Toast.makeText(this, historico,Toast.LENGTH_SHORT).show();
+        historico = resposta;
     }//igual
 
 
     public void calcula(){
         if(operando.equals("+")){ //usar um case para operandos retratar o igual para cada operando
-            acumulado += Integer.parseInt(resposta); //ideal tirar essa funcionalidade para um método
-            //que recebe um operando
+            acumulado += Integer.parseInt(resposta);
         }else if (operando.equals("-")){
             acumulado -= Integer.parseInt(resposta);
         }else if(operando.equals("*")){
@@ -201,6 +221,7 @@ public class Calculadora extends AppCompatActivity
         resposta = "";
         operando = "";
         acumulado = 0;
+        historico = "";
         tela.setText(resposta);
     } //limpar
 
